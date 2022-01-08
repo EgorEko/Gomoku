@@ -1,5 +1,7 @@
 package academy.devonline.tictactoe;
 
+import academy.devonline.tictactoe.component.*;
+
 /**
  * @author devonline
  * @link http://devonline.academy/java
