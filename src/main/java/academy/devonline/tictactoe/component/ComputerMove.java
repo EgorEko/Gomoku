@@ -5,6 +5,8 @@ import academy.devonline.tictactoe.model.GameTable;
 
 import java.util.Random;
 
+import static academy.devonline.tictactoe.model.Sign.O;
+
 /**
  * @author devonline
  * @link http://devonline.academy/java
@@ -18,7 +20,7 @@ public class ComputerMove {
             final int col = random.nextInt(3);
             final Cell randomCell = new Cell(raw, col);
             if (gameTable.isEmpty(randomCell)) {
-                gameTable.setSign(randomCell, '0');
+                gameTable.setSign(randomCell, O);
                 return;
             }
         }
