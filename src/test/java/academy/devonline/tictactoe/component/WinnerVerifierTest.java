@@ -1,21 +1,10 @@
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.Cell;
-import academy.devonline.tictactoe.model.GameTable;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
-
-import static academy.devonline.tictactoe.model.Sign.O;
-import static academy.devonline.tictactoe.model.Sign.X;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 /**
  * @author devonline
  * @link http://devonline.academy/java
  */
-class WinnerVerifierTest {
+/*class WinnerVerifierTest {
 
     private final WinnerVerifier winnerVerifier = new WinnerVerifier();
 
@@ -111,4 +100,4 @@ class WinnerVerifierTest {
 
         assertTrue(winnerVerifier.isComputerWin(gameTable));
     }
-}
+}*/
