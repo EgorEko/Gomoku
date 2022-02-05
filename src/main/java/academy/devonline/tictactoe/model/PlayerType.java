@@ -5,7 +5,6 @@ package academy.devonline.tictactoe.model;
  * @link http://devonline.academy/java
  */
 public enum PlayerType {
-
     USER,
 
     COMPUTER
