@@ -1,6 +1,6 @@
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.GameTable;
+import academy.devonline.tictactoe.model.game.GameTable;
 
 /**
  * @author devonline
@@ -8,11 +8,11 @@ import academy.devonline.tictactoe.model.GameTable;
  */
 public interface DataPrinter {
 
+    void printInstructions();
+
     void printIfoMessage(String message);
 
     void printErrorMessage(String message);
-
-    void printMappingTable();
 
     void printGameTable(GameTable gameTable);
 }

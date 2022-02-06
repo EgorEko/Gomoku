@@ -1,10 +1,10 @@
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.Cell;
-import academy.devonline.tictactoe.model.GameTable;
+import academy.devonline.tictactoe.model.game.Cell;
+import academy.devonline.tictactoe.model.game.GameTable;
 import org.junit.jupiter.api.Test;
 
-import static academy.devonline.tictactoe.model.Sign.X;
+import static academy.devonline.tictactoe.model.game.Sign.X;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

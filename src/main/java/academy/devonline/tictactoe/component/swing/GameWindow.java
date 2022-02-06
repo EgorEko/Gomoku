@@ -1,9 +1,10 @@
 package academy.devonline.tictactoe.component.swing;
 
 import academy.devonline.tictactoe.component.DataPrinter;
+import academy.devonline.tictactoe.component.GameOverHandler;
 import academy.devonline.tictactoe.component.UserInputReader;
-import academy.devonline.tictactoe.model.Cell;
-import academy.devonline.tictactoe.model.GameTable;
+import academy.devonline.tictactoe.model.game.Cell;
+import academy.devonline.tictactoe.model.game.GameTable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,7 +16,7 @@ import java.awt.event.MouseEvent;
  * @author devonline
  * @link http://devonline.academy/java
  */
-public class GameWindow extends JFrame implements DataPrinter, UserInputReader {
+public class GameWindow extends JFrame implements DataPrinter, UserInputReader, GameOverHandler {
 
     private static final int GAME_TABLE_SIZE = 3;
 
@@ -78,6 +79,7 @@ public class GameWindow extends JFrame implements DataPrinter, UserInputReader {
         setVisible(true);
     }
 
+
     @Override
     public void printIfoMessage(final String message) {
         JOptionPane.showMessageDialog(this, message, "Info", JOptionPane.INFORMATION_MESSAGE);
@@ -88,8 +90,9 @@ public class GameWindow extends JFrame implements DataPrinter, UserInputReader {
         JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
+
     @Override
-    public void printMappingTable() {
+    public void printInstructions() {
         // do nothing
     }
 
@@ -115,7 +118,8 @@ public class GameWindow extends JFrame implements DataPrinter, UserInputReader {
         return clickedCell;
     }
 
-    public static void main(String[] args) {
-        new GameWindow();
+    @Override
+    public void gameOver() {
+        System.exit(0);
     }
 }

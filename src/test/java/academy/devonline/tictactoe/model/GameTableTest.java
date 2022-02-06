@@ -1,10 +1,12 @@
 package academy.devonline.tictactoe.model;
 
+import academy.devonline.tictactoe.model.game.Cell;
+import academy.devonline.tictactoe.model.game.GameTable;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import static academy.devonline.tictactoe.model.Sign.X;
+import static academy.devonline.tictactoe.model.game.Sign.X;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
