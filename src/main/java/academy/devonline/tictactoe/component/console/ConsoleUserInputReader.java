@@ -26,7 +26,7 @@ public class ConsoleUserInputReader implements UserInputReader {
     @Override
     public Cell getUserInput() {
         while (true) {
-            dataPrinter.printIfoMassage("Please type number between 1 and 9:");
+            dataPrinter.printIfoMessage("Please type number between 1 and 9:");
             final String userInput = new Scanner(System.in).nextLine();
             if (userInput.length() == 1) {
                 final char ch = userInput.charAt(0);

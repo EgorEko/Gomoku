@@ -8,9 +8,9 @@ import academy.devonline.tictactoe.model.GameTable;
  */
 public interface DataPrinter {
 
-    void printIfoMassage(String massage);
+    void printIfoMessage(String message);
 
-    void printErrorMassage(String massage);
+    void printErrorMessage(String message);
 
     void printMappingTable();
 

@@ -19,12 +19,12 @@ public class ConsoleDataPrinter implements DataPrinter {
 
 
     @Override
-    public void printIfoMassage(String massage) {
+    public void printIfoMessage(String massage) {
         System.out.println(massage);
     }
 
     @Override
-    public void printErrorMassage(String massage) {
+    public void printErrorMessage(String massage) {
         System.err.println(massage);
     }
 

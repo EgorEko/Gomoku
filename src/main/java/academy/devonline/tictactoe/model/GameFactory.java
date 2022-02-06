@@ -1,9 +1,7 @@
 package academy.devonline.tictactoe.model;
 
 import academy.devonline.tictactoe.component.*;
-import academy.devonline.tictactoe.component.console.ConsoleDataPrinter;
-import academy.devonline.tictactoe.component.console.ConsoleUserInputReader;
-import academy.devonline.tictactoe.component.keypad.DesktopNumericKeypadCellNumberConverter;
+import academy.devonline.tictactoe.component.swing.GameWindow;
 
 import static academy.devonline.tictactoe.model.PlayerType.USER;
 import static academy.devonline.tictactoe.model.Sign.O;
@@ -27,9 +25,10 @@ public class GameFactory {
     }
 
     public Game create() {
-        final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
-        final DataPrinter dataPrinter = new ConsoleDataPrinter(cellNumberConverter);
-        final UserInputReader userInputReader = new ConsoleUserInputReader(cellNumberConverter, dataPrinter);
+        final GameWindow gameWindow = new GameWindow();
+        //final CellNumberConverter cellNumberConverter = new DesktopNumericKeypadCellNumberConverter();
+        final DataPrinter dataPrinter = gameWindow; //new ConsoleDataPrinter(cellNumberConverter);
+        final UserInputReader userInputReader = gameWindow; //new ConsoleUserInputReader(cellNumberConverter, dataPrinter);
 
         final Player player1;
         if (player1Type == USER) {
