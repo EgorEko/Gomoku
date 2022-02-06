@@ -19,4 +19,4 @@
 @rem @email  devonline.academy@gmail.com
 @rem ###################################################################################################################
 
-start console user user
+start.cmd console user user

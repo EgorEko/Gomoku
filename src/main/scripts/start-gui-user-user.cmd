@@ -19,4 +19,4 @@
 @rem @email  devonline.academy@gmail.com
 @rem ###################################################################################################################
 
-start gui user user
+start.cmd gui user user
