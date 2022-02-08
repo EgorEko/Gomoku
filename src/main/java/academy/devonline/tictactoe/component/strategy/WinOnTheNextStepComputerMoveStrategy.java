@@ -6,10 +6,10 @@ import academy.devonline.tictactoe.model.game.Sign;
  * @author devonline
  * @link http://devonline.academy/java
  */
-public class PreventUserWinComputerMoveStrategy extends AbstractComputerMoveStrategy {
+public class WinOnTheNextStepComputerMoveStrategy extends AbstractComputerMoveStrategy {
 
-    public PreventUserWinComputerMoveStrategy() {
-        super(1);
+    public WinOnTheNextStepComputerMoveStrategy() {
+        super(2);
     }
 
     @Override
