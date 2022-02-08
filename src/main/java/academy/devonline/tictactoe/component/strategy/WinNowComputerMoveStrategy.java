@@ -18,24 +18,10 @@ public class WinNowComputerMoveStrategy implements ComputerMoveStrategy {
                 tryToMakeMoveBySecondaryDiagonal(gameTable, sign);
     }
 
+    @SuppressWarnings("Convert2MethodRef")
     private boolean tryToMakeMoveByRows(GameTable gameTable, Sign sign) {
         for (int i = 0; i < 3; i++) {
-            int countEmptyCells = 0;
-            int countSignCells = 0;
-            Cell lastEmptyCell = null;
-            for (int j = 0; j < 3; j++) {
-                final Cell cell = new Cell(i, j);
-                if (gameTable.isEmpty(cell)) {
-                    lastEmptyCell = cell;
-                    countEmptyCells++;
-                } else if (gameTable.getSign(cell) == sign) {
-                    countSignCells++;
-                } else {
-                    break;
-                }
-            }
-            if (countEmptyCells == 1 && countSignCells == 2) {
-                gameTable.setSign(lastEmptyCell, sign);
+            if (tryToMakeMoveUsingLambdaConversion(gameTable, sign, i, (k, j) -> new Cell(k, j))) {
                 return true;
             }
         }
@@ -44,22 +30,7 @@ public class WinNowComputerMoveStrategy implements ComputerMoveStrategy {
 
     private boolean tryToMakeMoveByCols(GameTable gameTable, Sign sign) {
         for (int i = 0; i < 3; i++) {
-            int countEmptyCells = 0;
-            int countSignCells = 0;
-            Cell lastEmptyCell = null;
-            for (int j = 0; j < 3; j++) {
-                final Cell cell = new Cell(j, i);
-                if (gameTable.isEmpty(cell)) {
-                    lastEmptyCell = cell;
-                    countEmptyCells++;
-                } else if (gameTable.getSign(cell) == sign) {
-                    countSignCells++;
-                } else {
-                    break;
-                }
-            }
-            if (countEmptyCells == 1 && countSignCells == 2) {
-                gameTable.setSign(lastEmptyCell, sign);
+            if (tryToMakeMoveUsingLambdaConversion(gameTable, sign, i, (k, j) -> new Cell(j, k))) {
                 return true;
             }
         }
@@ -67,11 +38,22 @@ public class WinNowComputerMoveStrategy implements ComputerMoveStrategy {
     }
 
     private boolean tryToMakeMoveByMainDiagonal(GameTable gameTable, Sign sign) {
+        return tryToMakeMoveUsingLambdaConversion(gameTable, sign, -1, (k, j) -> new Cell(j, j));
+    }
+
+    private boolean tryToMakeMoveBySecondaryDiagonal(final GameTable gameTable, final Sign sign) {
+        return tryToMakeMoveUsingLambdaConversion(gameTable, sign, -1, (k, j) -> new Cell(j, 2 - j));
+    }
+
+    private boolean tryToMakeMoveUsingLambdaConversion(final GameTable gameTable,
+                                                       final Sign sign,
+                                                       final int i,
+                                                       final Lambda lambda) {
         int countEmptyCells = 0;
         int countSignCells = 0;
         Cell lastEmptyCell = null;
         for (int j = 0; j < 3; j++) {
-            final Cell cell = new Cell(j, j);
+            final Cell cell = lambda.convert(i, j);
             if (gameTable.isEmpty(cell)) {
                 lastEmptyCell = cell;
                 countEmptyCells++;
@@ -88,25 +70,14 @@ public class WinNowComputerMoveStrategy implements ComputerMoveStrategy {
         return false;
     }
 
-    private boolean tryToMakeMoveBySecondaryDiagonal(final GameTable gameTable, final Sign sign) {
-        int countEmptyCells = 0;
-        int countSignCells = 0;
-        Cell lastEmptyCell = null;
-        for (int j = 0; j < 3; j++) {
-            final Cell cell = new Cell(j, j);
-            if (gameTable.isEmpty(cell)) {
-                lastEmptyCell = cell;
-                countEmptyCells++;
-            } else if (gameTable.getSign(cell) == sign) {
-                countSignCells++;
-            } else {
-                break;
-            }
-        }
-        if (countEmptyCells == 1 && countSignCells == 2) {
-            gameTable.setSign(lastEmptyCell, sign);
-            return true;
-        }
-        return false;
+
+    /**
+     * @author devonline
+     * @link http://devonline.academy/java
+     */
+    @FunctionalInterface
+    private interface Lambda {
+
+        Cell convert(int k, int j);
     }
 }
