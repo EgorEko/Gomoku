@@ -28,14 +28,14 @@ public class DesktopNumericKeypadCellNumberConverter implements CellNumberConver
         }
         throw new IllegalArgumentException(
                 format("Number parameter must be between '1' and '9'! Current value is '%s'!", number)
-                );
+        );
     }
 
     @Override
     public char toNumber(final Cell cell) {
         try {
             return mapping[cell.getRow()][cell.getCol()];
-        }catch (final ArrayIndexOutOfBoundsException ignore){
+        } catch (final ArrayIndexOutOfBoundsException ignore) {
             throw new IllegalArgumentException(
                     format("Row and col indexes must be between 0 and 2! Current row is %s, current col is %s!",
                             cell.getRow(), cell.getCol()
