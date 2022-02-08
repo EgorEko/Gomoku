@@ -1,10 +1,7 @@
 package academy.devonline.tictactoe.component;
 
-import academy.devonline.tictactoe.model.game.Cell;
 import academy.devonline.tictactoe.model.game.GameTable;
 import academy.devonline.tictactoe.model.game.Sign;
-
-import java.util.Random;
 
 /**
  * @author devonline
