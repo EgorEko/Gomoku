@@ -45,9 +45,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://github.com/devonline-academy/tic-tac-toe.git</connection>
-        <developerConnection>scm:git:ssh://github.com:devonline-academy/tic-tac-toe.git</developerConnection>
-        <url>http://github.com/devonline-academy/tic-tac-toe/tree/master</url>
+        <connection>scm:git:git://github.com/EgorEko/TicTackToe2022/tic-tac-toe.git</connection>
+        <developerConnection>scm:git:ssh://github.com:EgorEko/tic-tac-toe.git</developerConnection>
+        <url>http://github.com/EgorEko/TicTackToe2022/dtree/master</url>
     </scm>
 
     <properties>
