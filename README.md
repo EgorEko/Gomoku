@@ -1,4 +1,4 @@
-## The Gomoku Project
+## The gomoku Project
 
 ---------
 
@@ -24,7 +24,7 @@ mvn -P without-jre clean package
     - Add %JDK_HOME%\bin\ directory for Windows;
     - Add $JDK_HOME/bin/ directory for MacOS and Linux;
 - Re-login or restart computer;
-- Unzip the Gomoku distribution:
+- Unzip the gomoku distribution:
     - Unzip gomoku-${project.version}-windows.zip for Windows;
     - Unzip gomoku-${project.version}-unix.tar.gz for MacOS or Linux;
 - Go to unzipped directory;
@@ -51,7 +51,7 @@ mvn -P with-jre clean package
 
 ### Run instructions
 
-- Unzip the Gomoku distribution:
+- Unzip the gomoku distribution:
     - Unzip gomoku-${project.version}-windows-with-jre.zip for Windows;
     - Unzip gomoku-${project.version}-macos-with-jre.tar.gz for MacOS;
     - Unzip tic-tac-toe-${project.version}-linux-with-jre.tar.gz for Linux;
